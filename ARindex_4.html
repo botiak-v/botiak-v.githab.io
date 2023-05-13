@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body>
+    <a-scene embedded arjs>
+      <a-marker preset="hiro">
+        <a-box position='0 0.5 0' material='color: magenta;'></a-box>
+      </a-marker>
+      <a-marker preset="kanji">
+        <a-torus position='0 0.5 0' material='color: yellow;'></a-torus>
+      </a-marker>
+      <a-marker type='pattern' url='pattern-letterF.patt'>
+        <a-sphere color="green"></a-sphere>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
