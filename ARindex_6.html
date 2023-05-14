@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+		<script src="Rectangle.js"></script>
+	</head>
+	<body>
+		<a-scene embedded arjs = 'trackingMethod: best;'>
+			<a-marker type="pattern" url="Paterns/pattern-letterA.patt" id="A" registerevents>
+				<a-sphere radius="0.15" color="blue"></a-sphere>
+				<a-entity id="lineAB"></a-entity>
+			</a-marker>
+			
+			<a-marker type="pattern" url="Paterns/pattern-letterB.patt" id="B" registerevents>
+				<a-sphere radius="0.15" color="blue"></a-sphere>
+				<a-entity id="lineBC"></a-entity>
+			</a-marker>
+			
+			<a-marker type="pattern" url="Paterns/pattern-letterC.patt" id="C" registerevents>
+				<a-sphere radius="0.15" color="blue"></a-sphere>
+				<a-entity id="lineCD"></a-entity>
+			</a-marker>
+			
+			<a-marker type="pattern" url="Paterns/pattern-letterD.patt" id="D" registerevents>
+				<a-sphere radius="0.15" color="blue"></a-sphere>
+				<a-entity id="lineDF"></a-entity>
+			</a-marker>
+			
+			<a-marker type="pattern" url="Paterns/pattern-letterF.patt" id="F" registerevents>
+				<a-sphere radius="0.15" color="blue"></a-sphere>
+				<a-entity id="lineFA"></a-entity>
+			</a-marker>
+			<a-entity run></a-entity>
+			<a-camera-static/>
+		</a-scene>
+	</body
+</html>
