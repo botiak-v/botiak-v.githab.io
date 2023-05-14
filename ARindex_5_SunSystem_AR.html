@@ -1,0 +1,65 @@
+<html>
+		<head>
+				<meta charset="utf-8">
+				<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+				<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+				<script>
+						AFRAME.registerComponent('registerevents', {
+							init: function () {
+								var marker = this.el;
+								marker.addEventListener('markerFound', function() {
+									console.log('markerFound', marker.id); });
+								marker.addEventListener('markerLost', function() {
+									console.log('markerLost', marker.id); });
+							}
+						});		
+				</script>
+				<script src="planet.js"></script>
+		</head>
+		<body>
+				<a-scene embedded arjs = 'trackingMethod: best;'>
+						<a-marker preset="hiro" registerevents>
+								<a-entity scale="0.01 0.01 0.01" rotation="-90 0 0">
+										<a-entity geometry="primitive: sphere; radius: 20.510" 
+															material="src: sun.jpg; color:  #ffff1a"
+															animation="property": rotation: 0 360 0; loop: true; dur: 9000"
+															planet="dist: 0; mass: 1.989e30; name: Sun"></a-entity>
+										<a-entity geometry="primitive: sphere; radius: 2.4397"
+															material="src: mercury.jpg; color: #cccccc"
+															animation="property": rotation: 0 360 0; loop: true; dur: 9000"
+															planet="dist: 57.910e9; mass: 3.285e23; T: 88; name: Mercury"></a-entity>
+										<a-entity geometry="primitive: sphere; radius: 6.0518"
+															material="src: venus.jpg; color: #ffdd1a"
+															animation="property": rotation: 0 360 0; loop: true; dur: 9000"
+															planet="dist: 108.2e9; mass: 4.876e24; T: 224.7; name: Venus"></a-entity>
+										<a-entity geometry="primitive: sphere; radius: 6.371"
+															material="src: material="src: earth.jpg; color: #76a0ef"
+															animation="property": rotation: 0 360 0; loop: true; dur: 9000"
+															planet="dist: 149.6e9; mass: 6e24; T: 365; name: Earth"></a-entity>
+										<a-entity geometry="primitive: sphere; radius: 3.396"
+															material="src: mars.jpg; color: #ff6933"
+															animation="property": rotation: 0 360 0; loop: true; dur: 9000"
+															planet="dist: 228.6e9; mass: 6.418e23; T: 687; name: Mars"></a-entity>
+										<a-entity geometry="primitive: sphere; radius: 69.911"
+															material="src: jupiter.jpg; color: #ffb699"
+															animation="property": rotation: 0 360 0; loop: true; dur: 9000"
+															planet="dist: 778.6e9; mass: 1.899e27; T: 4329; name: Jupiter"></a-entity>
+										<a-entity geometry="primitive: sphere; radius: 60.268"
+															material="src: saturn.jpg; color:  #ffe6ea"
+															animation="property": rotation: 0 360 0; loop: true; dur: 9000"
+															planet="dist: 1433.6e9; mass: 5.68e26; T: 10767; name: Saturn"></a-entity>
+										<a-entity geometry="primitive: sphere; radius: 25.559"
+															material="src: uranus.jpg; color: #b1dae7"
+															animation="property": rotation: 0 360 0; loop: true; dur: 9000"
+															planet="dist: 2876.6e9; mass: 8.68e25; T: 30769; name: Uranus"></a-entity>
+										<a-entity geometry="primitive: sphere; radius: 24.764"
+															material="src: neptune.jpg; color: #4d4dff"
+															animation="property": rotation: 0 360 0; loop: true; dur: 9000"
+															planet="dist: 4503.6e9; mass: 1.02e26; T: 60190; name: Neptune"></a-entity>
+									    <a-entity main></a-entity>
+								</a-entity>
+						</a-marker>
+						<a-camera-static/>
+				</a-scene>
+		</body>
+</html>
