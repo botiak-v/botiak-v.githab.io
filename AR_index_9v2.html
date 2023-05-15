@@ -1,9 +1,9 @@
 <html>
 	<body>
 		<canvas id="Canvas"></canvas>
-				<script type="module">
+		<script type="module">
 			import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js';
-			import { OBJLoader } from 'https://unpkg.com/three@0.152.2/examples/jsm/loaders/OBJLoader.js';
+			import { OBJLoader } from 'https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/loaders/OBJLoader.js';
 
 			var renderer = new THREE.WebGLRenderer({canvas: document.getElementById('Canvas'), antialias: true});
 			renderer.setClearColor(0x333333);
@@ -11,6 +11,7 @@
 			renderer.setSize(window.innerWidth, window.innerHeight);
 			
 			var camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 20000);
+			camera.position.z = 10;
 
 			var scene = new THREE.Scene();
 
@@ -20,10 +21,10 @@
 			var lightTwo = new THREE.PointLight(0xffffff, 0.5);
 			scene.add(lightTwo);
 
-			var objLoader = new THREE.OBJLoader();
+			var objLoader = new OBJLoader();
 			objLoader.load("Rocket.obj", function(mesh) {
 				mesh.traverse(function(node) {
-					if (node instanceof THREE.Mesh) {
+					if (node.isMesh) {
 						node.castShadow = true;
 						node.receiveShadow = true;
 					}
