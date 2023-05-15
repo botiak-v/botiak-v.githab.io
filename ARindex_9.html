@@ -1,9 +1,9 @@
 <html>
 	<body>
 		<canvas id="Canvas"></canvas>
-		<script type="module" src="https://unpkg.com/three@0.133.0/examples/jsm/loaders/OBJLoader.js"></script>
+		<script type="module" src="https://unpkg.com/three@0.152.2/examples/jsm/loaders/OBJLoader.js"></script>
 		<script type="module">
-			import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.133.0/build/three.module.js';
+			import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js';
 
 			var renderer = new THREE.WebGLRenderer({canvas: document.getElementById('Canvas'), antialias: true});
 			renderer.setClearColor(0x333333);
@@ -29,7 +29,7 @@
 					}
 				});
 				scene.add(mesh);
-				mesh.position.set(-80, -50, -150);
+				mesh.position.set(0, 0, 5);
 				mesh.rotation.y = -Math.PI/4;
 			});
 
