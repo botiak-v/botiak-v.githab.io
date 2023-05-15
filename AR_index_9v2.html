@@ -21,8 +21,8 @@
 			var lightTwo = new THREE.PointLight(0xffffff, 0.5);
 			scene.add(lightTwo);
 
-			var objLoader = new OBJLoader();
-			objLoader.load("Rocket.obj", function(mesh) {
+			var OBJLoader = new OBJLoader();
+			OBJLoader.load("Rocket.obj", function(mesh) {
 				mesh.traverse(function(node) {
 					if (node.isMesh) {
 						node.castShadow = true;
