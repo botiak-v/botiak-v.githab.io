@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 	loader.load(
 		'batman.glb',
 		function ( gltf ) {
-			gltf.scene.scale.set(0.048,0.048,0.048);
+			gltf.scene.scale.set(0.4,0.4,0.4);
 			gltf.scene.position.y=-0.1;
 			gltf.scene.position.z=-0.2;
 
